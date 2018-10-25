@@ -1,0 +1,50 @@
+{
+  "name": "@prisma-cms/uploader",
+  "version": "1.0.0",
+  "private": false,
+  "main": "lib/App.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "nwb build --copy-files",
+    "build-app": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  },
+  "devDependencies": {
+    "@prisma-cms/front": "^1.9.8-beta",
+    "nwb": "^0.23.0",
+    "react-scripts": "2.0.5"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "description": "Tests module for @prisma-cms",
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [
+    "prisma-cms",
+    "front",
+    "components"
+  ],
+  "author": "Fi1osof",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prisma-cms/uploader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prisma-cms/uploader/issues"
+  },
+  "homepage": "https://github.com/prisma-cms/uploader#readme"
+}
