@@ -1,12 +1,13 @@
 {
   "name": "@prisma-cms/uploader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "main": "lib/App.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "nwb build --copy-files",
     "build-app": "react-scripts build",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -15,9 +16,10 @@
     "react-dom": "^16.6.0"
   },
   "devDependencies": {
-    "@prisma-cms/front": "^1.9.8-beta",
+    "@prisma-cms/front": "latest",
     "nwb": "^0.23.0",
-    "react-scripts": "2.0.5"
+    "react-scripts": "2.0.5",
+    "source-map-explorer": "^2.0.1"
   },
   "eslintConfig": {
     "extends": "react-app"
