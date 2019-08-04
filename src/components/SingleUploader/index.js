@@ -8,7 +8,7 @@ import gql from 'graphql-tag';
 
 import FileInput from '../FileInput';
 
-export class SingleUploader extends Component{
+export class SingleUploader extends Component {
 
   static propTypes = {
     mutate: PropTypes.func.isRequired,
@@ -24,7 +24,7 @@ export class SingleUploader extends Component{
   };
 
 
-  async handleChange({ target }){
+  async handleChange({ target }) {
 
     const result = await this.upload(target);
 
@@ -32,7 +32,7 @@ export class SingleUploader extends Component{
       onUpload,
     } = this.props;
 
-    if(onUpload){
+    if (onUpload) {
       onUpload(result);
     }
 
@@ -41,20 +41,30 @@ export class SingleUploader extends Component{
   }
 
 
-  upload(target){
+  upload(target) {
 
     const {
       mutate,
       onUpload,
+      directory,
+      name,
     } = this.props;
 
+    // console.log("target this.props", { ...this.props });
+
     return target.validity.valid && mutate({
-      variables: { file: target.files[0] },
+      variables: {
+        data: {
+          file: target.files[0],
+          directory,
+          name,
+        },
+      },
     });
   }
 
 
-  render(){
+  render() {
 
     const {
       mutate,
@@ -66,7 +76,7 @@ export class SingleUploader extends Component{
 
     return <FileInput
       multiple={multiple}
-      onChange={event => this.handleChange(event)} 
+      onChange={event => this.handleChange(event)}
       {...other}
     />
 
@@ -76,9 +86,16 @@ export class SingleUploader extends Component{
 
 
 export default graphql(gql`
-  mutation($file: Upload!) {
-    singleUpload(file: $file) {
+  mutation(
+    $file: Upload
+    $data: SingleUploadInput
+  ) {
+    singleUpload(
+      file: $file
+      data: $data
+    ) {
       id
+      name
       filename
       encoding
       mimetype

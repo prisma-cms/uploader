@@ -95,7 +95,14 @@ class DevRenderer extends PrismaCmsRenderer {
       {
         exact: true,
         path: "/",
-        component: App,
+        // component: App,
+        render: props => {
+
+          return <App 
+            directory="test2/inner/test/"
+            name="sdfsdfds"
+          />
+        }
       },
       {
         exact: true,
@@ -112,6 +119,17 @@ class DevRenderer extends PrismaCmsRenderer {
         render: props => this.renderOtherPages(props),
       },
     ];
+
+  }
+
+  renderWrapper() {
+
+    return <Fragment>
+
+      {this.renderMenu()}
+      {super.renderWrapper()}
+
+    </Fragment>;
 
   }
 
