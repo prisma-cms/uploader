@@ -37,6 +37,7 @@ class FileInput extends Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
     helperText: PropTypes.string,
+    accept: PropTypes.string,
   };
 
   static defaultProps = {
@@ -109,7 +110,7 @@ class FileInput extends Component {
     onChange(event);
   }
 
-  onDragOver(event){
+  onDragOver(event) {
     event.preventDefault();
 
     const {
@@ -124,7 +125,7 @@ class FileInput extends Component {
   }
 
 
-  isAllowDrop(event){
+  isAllowDrop(event) {
     return true;
   }
 
@@ -145,6 +146,7 @@ class FileInput extends Component {
       helperText,
       children,
       className,
+      accept,
       ...other
     } = this.props;
 
@@ -155,6 +157,7 @@ class FileInput extends Component {
     let input = <input
       type="file"
       multiple={multiple}
+      accept={accept}
       ref={input => {
         this.input = input;
       }}
@@ -194,7 +197,7 @@ class FileInput extends Component {
       {input}
 
       {children || <Fragment>
-        
+
         <IconButton>
           <UploadIcon
             className={classes.icon}

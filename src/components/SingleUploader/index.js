@@ -50,8 +50,8 @@ export class SingleUploader extends Component {
       name,
     } = this.props;
 
-    // console.log("target this.props", { ...this.props });
-
+    console.log("target this.props", { ...this.props });
+    
     return target.validity.valid && mutate({
       variables: {
         data: {
@@ -62,9 +62,11 @@ export class SingleUploader extends Component {
       },
     });
   }
-
-
+  
+  
   render() {
+    
+    console.log("target this.props", { ...this.props });
 
     const {
       mutate,

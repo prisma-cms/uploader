@@ -98,16 +98,25 @@ class DevRenderer extends PrismaCmsRenderer {
         // component: App,
         render: props => {
 
-          return <App 
+          return <App
             directory="test2/inner/test/"
-            name="sdfsdfds"
+            name="Test"
+          // accept="audio/mp3"
           />
         }
       },
       {
         exact: true,
         path: "/pure-single",
-        component: SingleUploader,
+        // component: SingleUploader,
+        render: props => {
+
+          return <SingleUploader
+            directory="test3/inner/test/"
+            name="Test3"
+            // accept="audio/mp3"
+          />
+        }
       },
       {
         exact: true,
