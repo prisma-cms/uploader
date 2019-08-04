@@ -5,7 +5,7 @@ export default class FileInput extends Component{
 
   render(){
     
-    console.log("FileInput this.props", { ...this.props });
+    // console.log("FileInput this.props", { ...this.props });
 
     return <input
       type="file"
