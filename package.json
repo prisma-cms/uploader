@@ -1,6 +1,6 @@
 {
   "name": "@prisma-cms/uploader",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "private": false,
   "main": "lib/App.js",
   "scripts": {
@@ -12,6 +12,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@prisma-cms/component": "latest",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"
   },

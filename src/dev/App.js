@@ -101,6 +101,7 @@ class DevRenderer extends PrismaCmsRenderer {
           return <App
             directory="test2/inner/test/"
             name="Test"
+            multiple
           // accept="audio/mp3"
           />
         }
@@ -114,7 +115,7 @@ class DevRenderer extends PrismaCmsRenderer {
           return <SingleUploader
             directory="test3/inner/test/"
             name="Test3"
-            // accept="audio/mp3"
+          // accept="audio/mp3"
           />
         }
       },

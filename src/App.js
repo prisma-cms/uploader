@@ -8,6 +8,7 @@ import UploadIcon from 'material-ui-icons/CloudUpload';
 import withStyles from 'material-ui/styles/withStyles';
 import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
+import CircularProgress from "material-ui/Progress/CircularProgress";
 
 const styles = theme => ({
   inputRoot: {
@@ -38,6 +39,7 @@ class FileInput extends Component {
     classes: PropTypes.object.isRequired,
     helperText: PropTypes.string,
     accept: PropTypes.string,
+    loading: PropTypes.bool.isRequired,
   };
 
   static defaultProps = {
@@ -147,6 +149,7 @@ class FileInput extends Component {
       children,
       className,
       accept,
+      loading,
       ...other
     } = this.props;
 
@@ -199,11 +202,14 @@ class FileInput extends Component {
       {children || <Fragment>
 
         <IconButton>
-          <UploadIcon
-            className={classes.icon}
-          />
+          {loading ?
+            <CircularProgress />
+            :
+            <UploadIcon
+              className={classes.icon}
+            />
+          }
         </IconButton>
-
 
         {helperText ? <Typography
           component="span"

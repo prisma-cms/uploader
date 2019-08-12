@@ -1,3 +1,8 @@
+1.2.0
+=================================
+- Added @prisma-cms/component
+- Fix error messages
+
 1.1.2
 =================================
 - Cleanup console.log
