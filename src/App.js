@@ -84,6 +84,7 @@ class FileInput extends Component {
   onDrop(event) {
 
     event.preventDefault();
+    event.stopPropagation();
 
     let valid = true;
 
@@ -191,7 +192,11 @@ class FileInput extends Component {
       onDrop={(event) => this.onDrop(event)}
 
       onClick={event => {
+
+        event.stopPropagation();
+
         this.input.click();
+
       }}
 
       {...other}

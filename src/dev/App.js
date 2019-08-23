@@ -19,6 +19,7 @@ class DevRenderer extends PrismaCmsRenderer {
 
 
   static propTypes = {
+    // eslint-disable-next-line react/forbid-foreign-prop-types
     ...PrismaCmsRenderer.propTypes,
     pure: PropTypes.bool.isRequired,
   }

@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 // import { graphql } from 'react-apollo';
@@ -13,6 +13,7 @@ import FileInput from '../FileInput';
 export class SingleUploader extends PrismaCmsComponent {
 
   static propTypes = {
+    // eslint-disable-next-line react/forbid-foreign-prop-types
     ...PrismaCmsComponent.propTypes,
     mutate: PropTypes.func,
     mutation: PropTypes.object,
