@@ -1,3 +1,7 @@
+1.2.2
+=================================
+- Allow pass custom data object on SingleUpload
+
 1.2.1
 =================================
 - Fix onClick event

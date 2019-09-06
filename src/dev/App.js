@@ -102,8 +102,10 @@ class DevRenderer extends PrismaCmsRenderer {
           return <App
             directory="test2/inner/test/"
             name="Test"
-            multiple
-          // accept="audio/mp3"
+            // multiple
+            // accept="audio/mp3"
+            data={{
+            }}
           />
         }
       },

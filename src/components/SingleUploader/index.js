@@ -20,6 +20,9 @@ export class SingleUploader extends PrismaCmsComponent {
     FileInput: PropTypes.func.isRequired,
     multiple: PropTypes.bool.isRequired,
     onUpload: PropTypes.func,
+
+    // Additional upload data
+    data: PropTypes.object,
   };
 
 
@@ -73,9 +76,10 @@ export class SingleUploader extends PrismaCmsComponent {
       mutation,
       directory,
       name,
+      data,
     } = this.props;
 
-    // console.log("target this.props", { ...this.props });
+    console.log("target this.props", { ...this.props });
 
     return target.validity.valid && this.mutate({
       mutate,
@@ -85,6 +89,7 @@ export class SingleUploader extends PrismaCmsComponent {
           file: target.files[0],
           directory,
           name,
+          ...data,
         },
       },
     });
