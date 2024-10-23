@@ -35,7 +35,7 @@ class FileInput extends React.PureComponent<FileInputProps, FileInputState> {
     }
   }
 
-  resetStore() {
+  resetStore = () => {
     this.setState({
       ...this.getInitialStore(),
     })
@@ -54,7 +54,7 @@ class FileInput extends React.PureComponent<FileInputProps, FileInputState> {
     return items
   }
 
-  onDrop(event: React.DragEvent) {
+  onDrop = (event: React.DragEvent) => {
     event.preventDefault()
     event.stopPropagation()
 
@@ -128,7 +128,9 @@ class FileInput extends React.PureComponent<FileInputProps, FileInputState> {
       // onClick,
       onChange,
       multiple,
-      helperText,
+      helperText = `Для загрузки перетащите ${
+        this.props.multiple ? 'файлы' : 'файл'
+      } сюда`,
       children,
       className,
       accept,

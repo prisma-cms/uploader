@@ -15,23 +15,23 @@
     "format": "prettier --write .",
     "lint": "eslint . --ext ts --ext tsx --ext js",
     "test": "jest",
-    "test:all": "yarn lint && yarn types && yarn test",
+    "test:all": "npm run lint && npm run types && npm run test",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "preversion": "yarn test && yarn clean && yarn build",
-    "postversion": "yarn run npm publish",
+    "preversion": "npm run test && npm run clean && npm run build",
+    "postversion": "npm run npm publish",
     "postpublish": "git push origin --all; git push origin --tags"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn run types"
+      "pre-push": "npm run types"
     }
   },
   "lint-staged": {
     "*.@(ts|tsx)": [
-      "yarn lint",
-      "yarn format"
+      "npm run lint",
+      "npm run format"
     ]
   },
   "dependencies": {
@@ -76,6 +76,7 @@
     "jest-watch-typeahead": "^0.5.0",
     "lint-staged": "^10.5.1",
     "next": "^10.0.1",
+    "nodemon": "^3.1.7",
     "npm": "^6.14.8",
     "prettier": "^2.1.2",
     "react": "^17.0.1",

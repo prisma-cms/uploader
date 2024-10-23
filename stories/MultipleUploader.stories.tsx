@@ -34,7 +34,7 @@ export const MultipleUploader: React.FC<UploaderProps> = ({
 const args: UploaderProps = {
   name: 'test_file',
   onUpload: (result: UploadResponse) => {
-    const files = result.data.multipleUpload;
+    const files = result.data.multipleUpload
     action('onUpload files')(files)
   },
   accept: 'image/*',

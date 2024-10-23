@@ -22,7 +22,6 @@ export class Uploader extends PrismaCmsComponent<UploaderProps> {
     FileInput,
     multiple: false,
     directory: '',
-    helperText: `Для загрузки перетащите файлы сюда`,
   }
 
   handleChange = async ({ target }: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,7 +36,7 @@ export class Uploader extends PrismaCmsComponent<UploaderProps> {
     return result
   }
 
-  upload(target: HTMLInputElement) {
+  upload = async (target: HTMLInputElement) => {
     const { multiple } = this.props
 
     let mutation: DocumentNode | undefined
@@ -87,12 +86,14 @@ export class Uploader extends PrismaCmsComponent<UploaderProps> {
   ): SingleUploaderVariables | MultipleUploaderVariables {
     const { directory, name, multiple } = this.props
 
-    let variables: SingleUploaderVariables | MultipleUploaderVariables | undefined
+    let variables:
+      | SingleUploaderVariables
+      | MultipleUploaderVariables
+      | undefined
 
     if (multiple) {
       variables = { files: target.files }
-    } 
-    else {
+    } else {
       const file = target.files ? target.files[0] : null
 
       variables = {

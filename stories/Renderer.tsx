@@ -48,7 +48,7 @@ const Renderer: React.FC<RendererProps> = ({ children, multiple }) => {
                 path: 'uploads/image-3.png',
                 size: 10000,
               },
-            ]
+            ],
           },
         }
       } else {

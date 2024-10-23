@@ -34,7 +34,7 @@ export const SingleUploader: React.FC<UploaderProps> = ({
 const args: UploaderProps = {
   name: 'test_file',
   onUpload: (result: UploadResponse) => {
-    const file = result.data.singleUpload;
+    const file = result.data.singleUpload
     action('onUpload file')(file)
   },
   accept: 'image/*',

@@ -15,7 +15,7 @@ const ComponentStyled = styled(Component)`
 const props: UploaderProps = {
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   onUpload: (_result) => {},
-  name: "test",
+  name: 'test',
 }
 
 describe('Component', () => {
