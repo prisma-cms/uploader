@@ -1,7 +1,7 @@
 {
   "name": "@prisma-cms/uploader",
   "description": "Uploader module for @prisma-cms",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "private": false,
   "main": "dist",
   "scripts": {
@@ -19,7 +19,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "preversion": "npm run test && npm run clean && npm run build",
-    "postversion": "npm run npm publish",
+    "postversion": "npm publish",
     "postpublish": "git push origin --all; git push origin --tags"
   },
   "husky": {
